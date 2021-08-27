@@ -49,8 +49,8 @@ function forReceivingBonus() {
                 success : function(jsondata) {
                     alert(jsondata);
                 },
-                error : function() {
-                    alert('Error here in json:');
+                error : function(jsondata) {
+                    alert('Error here in json:' + jsondata);
                 }
             });
         }
@@ -77,8 +77,8 @@ function forReceivingBonus() {
                 success : function(jsondata) {
                     alert(jsondata);
                 },
-                error : function() {
-                    alert('Error here in json:');
+                error : function(jsondata) {
+                    alert('Error here in json:' + jsondata);
                 }
             });
         }
@@ -183,8 +183,8 @@ function addEntryToDb(){
         success : function(jsondata) {
             alert(jsondata);
         },
-        error : function() {
-            alert('Error here in json:');
+        error : function(jsondata) {
+            alert('Error here in json:' + jsondata);
         }
     });
     window.location.reload(true);
@@ -217,8 +217,8 @@ function bonusFromAdmin(){
         success : function(jsondata) {
             alert(jsondata);
         },
-        error : function() {
-            alert('Error here in json:');
+        error : function(jsondata) {
+            alert('Error here in json:' + jsondata);
         }
     });
     window.location.reload(true);
