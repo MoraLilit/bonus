@@ -109,10 +109,10 @@ SETTINGS_APPLICATION = 'settings.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd940nub77vcl40',
-        'USER': 'kaxajybwrfedpq',
-        'PASSWORD': '334bc277eb784ecb707b2f6895c678371ae485e7e5719945f3cc1150ee054f21',
-        'HOST': 'ec2-79-125-30-28.eu-west-1.compute.amazonaws.com',
+        'NAME': 'bonuses',
+        'USER': 'postgres',
+        'PASSWORD': '1532',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
