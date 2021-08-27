@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Home</title>
+    <link rel="stylesheet" href="../static/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="../static/css/Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="../static/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="../static/js/nicepage.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="../static/js/bonus.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.22.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "templates/images/default-logo.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+  </head>
+  <body data-home-page="Home.html" data-home-page-title="Home" class="u-body" onload="onLoad('{{ chosen_user.Access }}', '{{ general_bonuses.bonus_admin }}', '{{ chosen_user.receiving_bonuses }}')"><header class="u-clearfix u-header u-header" id="sec-2be6"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="" class="u-image u-logo u-image-1">
+          <!--TODO href for logo-->
+          <img src="../static/default-logo.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</symbol>
+</defs></svg>
+            </a>
+          </div>
+          <div class="u-nav-container">
+<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{% url 'logout' %}" style="padding: 10px 20px;">Logout</a>
+</li>
+          </div>
+          <div class="u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+ <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'logout' %}">Logout</a>
+</li>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-dff0">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="grid_user u-clearfix u-expanded-width u-gutter-6 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-col">
+              <div class="u-size-60">
+                <div class="u-layout-row">
+                  <div class="u-container-style u-layout-cell u-size-13 u-layout-cell-1">
+                    <div class="u-container-layout u-container-layout-1">
+                      <!--TODO container with info-->
+                      <img class="u-image u-image-default user_image u-image-1" src="../static/def-profile-pic.jpg" alt="" data-image-width="400" data-image-height="265">
+                      <p id="current-username">{{chosen_user.first_name}} {{chosen_user.last_name}}</p>
+                      <p id="yours-bonuses">Here your bonus: <b>{{ current_user_bonus }}</b></p>
+                      <p id="bonuses-to-give">Here not yours: <b>{{general_bonuses.bonus_admin}}</b></p>
+                      <p>Do not receive bonuses
+                        <label class="switch">
+                          <input type="checkbox" id="checkbox-for-receiving-bonus">
+                          <span class="slider round" onmouseup="forReceivingBonus()"></span>
+                        </label>
+                      </p>
+                      <p id="assign-bonuses-to-users-hidden" hidden>Send bonuses: <input type="text" id="assign-bonuses-to-users" name="assign-bonuses-to-users"></p>
+                      <p id="assign-bonuses-to-users-button-hidden" hidden><button type="button" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1" onmouseup="bonusFromAdmin()" >Send</button></p>
+                    </div>
+                  </div>
+                  <div class="grid_bonus u-container-style u-layout-cell u-size-31 u-layout-cell-2">
+                    <div class="u-container-layout u-container-layout-2">
+                      <div class="u-expanded-width u-tab-links-align-justify u-tabs workplace u-tabs-1">
+                        <ul class="u-tab-list u-unstyled" role="tablist">
+                          <li class="u-tab-item" role="presentation">
+                            <a class="active u-button-style u-tab-link" id="link-tab-7e1b" href="#tab-7e1b" role="tab" aria-controls="tab-7e1b" aria-selected="true">Free Bonuses</a>
+                          </li>
+                          <li class="u-tab-item u-tab-item-2" role="presentation">
+                            <a class="u-button-style u-tab-link" id="link-tab-8360" href="#tab-8360" role="tab" aria-controls="tab-8360" aria-selected="false">Received Bonuses</a>
+                          </li>
+                          <li class="u-tab-item u-tab-item-3" role="presentation">
+                            <a class="u-button-style u-tab-link" id="link-tab-f930" href="#tab-f930" role="tab" aria-controls="tab-f930" aria-selected="false">Sent Bonuses</a>
+                          </li>
+                        </ul>
+                        <div class="u-tab-content">
+                          <div class="u-align-left u-container-style u-tab-active u-tab-pane" id="tab-7e1b" role="tabpanel" aria-labelledby="link-tab-7e1b">
+                              <div class="u-container-layout u-valign-bottom u-container-layout-3">
+                                <!--TODO here container for 1 tab-->
+                                <p>Select user   <select id="select-user-to-sent-bonus" onchange="getOption()">
+                                  <option value="empty"></option>
+                                  {% for user in all_users %}
+                                    {% if user.username != chosen_user.username %}
+                                      <option value="{{ user.username }}">{{ user.first_name }} {{user.last_name}}</option>
+                                    {% endif %}
+                                  {% endfor %}
+                                </select></p>
+                                <p>Name: <i id="output-select-user-to-sent-bonus"></i></p>
+                                <p>Enter the quantity you want to send <input type="text" id="for-entering-bonuses" name="for-entering-bonuses"></p>
+                                <textarea rows="8" cols="45" id="comment-for-entering-bonuses" name="comment-for-entering-bonuses" placeholder="Enter your comment, it's necessary"></textarea>
+                                <p>Do you want to send it anonymously?
+                                <label class="switch">
+                                  <input type="checkbox" id="checkbox-for-anonymous">
+                                  <span class="slider round"></span>
+                                </label></p>
+                                <!--TODO 1 button-->
+                                <button type="button" id='add-button' class="save_user u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1" onmouseup="addBonusToTable()">Add</button>
+                              </div>
+                            </div>
+                          <div class="u-container-style u-tab-pane" id="tab-8360" role="tabpanel" aria-labelledby="link-tab-8360">
+                            <div class="u-container-layout u-container-layout-4">
+                              <!--TODO for 2 tab-->
+                              <!--TODO sort table by date, both-->
+                              <div class="u-expanded-width u-table u-table-responsive u-table-1" style="height: 400px; overflow-y:auto;">
+                                <table class="u-table-entity">
+                                  <colgroup>
+                                    <col width="25%">
+                                    <col width="25%">
+                                    <col width="25%">
+                                    <col width="25%">
+                                  </colgroup>
+                                  <tbody class="u-table-body">
+                                    <tr style="height: 50px;">
+                                      <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Who Sent</td>
+                                      <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Received Bonuses</td>
+                                      <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Comment</td>
+                                      <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Date</td>
+                                    </tr>
+                                    {% for user in received_bonuses %}
+                                      <tr style="height: 50px;">
+                                        {% if user.anonymous == False %}
+                                          <td class="u-border-1 u-border-grey-dark-1 u-table-cell">{{user.real_name_who_sent}}</td>
+                                        {% else %}
+                                          <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Anonymous</td>
+                                        {% endif %}
+                                        <td class="u-border-1 u-border-grey-dark-1 u-table-cell">{{user.bonus}}</td>
+                                        <td class="u-border-1 u-border-grey-dark-1 u-table-cell">{{user.comment}}</td>
+                                        <td class="u-border-1 u-border-grey-dark-1 u-table-cell">{{user.date}}</td>
+                                      </tr>
+                                    {% endfor %}
+                                  </tbody>
+                                </table>
+                              </div>
+                              <br>
+                              <!--<button type="button" id='previous-button' class="save_user u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1" onmouseup="showShift('{{ received_bonuses }}', '{{ shift }}')" style="float: left; ">Previous</button>
+                              <button type="button" id='current-button' class="save_user u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1" onmouseup="showShift('{{ received_bonuses }}', '{{ shift }}')" style="float: centre; margin: 0px">Current</button>
+                              <button type="button" id='next-button' class="save_user u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-1" onmouseup="showShift('{{ received_bonuses }}', '{{ shift }}')" style="float: right;">Next</button>-->
+                            </div>
+                          </div>
+                          <div class="u-container-style u-tab-pane" id="tab-f930" role="tabpanel" aria-labelledby="link-tab-f930">
+                            <div class="u-container-layout u-container-layout-5" style="height: 450px; overflow-y:auto;">
+                              <!--TODO 3 tab-->
+                              <div class="u-expanded-width u-table u-table-responsive u-table-2">
+                                <table class="u-table-entity">
+                                  <colgroup>
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                  </colgroup>
+                                  <tbody class="u-table-body">
+                                    <tr style="height: 50px;">
+                                      <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Who Received</td>
+                                      <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Received Bonuses</td>
+                                      <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Comment</td>
+                                      <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Anon</td>
+                                      <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Date</td>
+                                    </tr>
+                                    {% for user in sent_bonuses %}
+                                      <tr style="height: 50px;">
+                                        <td class="u-border-1 u-border-grey-dark-1 u-table-cell">{{user.real_name_who_received}}</td>
+                                        <td class="u-border-1 u-border-grey-dark-1 u-table-cell">{{user.bonus}}</td>
+                                        <td class="u-border-1 u-border-grey-dark-1 u-table-cell">{{user.comment}}</td>
+                                        {% if user.anonymous == False %}
+                                          <td class="u-border-1 u-border-grey-dark-1 u-table-cell">No</td>
+                                        {% else %}
+                                          <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Yes</td>
+                                        {% endif %}
+
+                                        <td class="u-border-1 u-border-grey-dark-1 u-table-cell">{{user.date}}</td>
+                                      </tr>
+                                    {% endfor %}
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid_final_bonus u-container-style u-layout-cell u-size-16 u-layout-cell-3">
+                    <form>
+                      <div class="u-container-layout u-container-layout-6">
+                        <!--TODO container for adding, left-->
+                        <!--TODO do something with dynamic width-->
+                        <!--TODO reset button-->
+                        <div class="u-expanded-width u-table u-table-responsive u-table-3" style="height: 395px; overflow-y:auto;">
+                          <table class="u-table-entity">
+                            <colgroup>
+                              <col width="25%">
+                              <col width="25%">
+                              <col width="25%">
+                              <col width="25%">
+                            </colgroup>
+                            <tbody class="u-table-body" id="table">
+                              <tr style="height: 50px;">
+                                <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Name</td>
+                                <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Bonus</td>
+                                <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Comment</td>
+                                <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Anonymous</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <button type="button" id="save-button" value="save" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-2" disabled onmouseup="addEntryToDb()">Save</button>
+                        <!--<button type="button" id="reset-button" value="reset" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-50 u-btn-2" onmouseup="resetToFunctionAddEntryToDb()">Reset</button>-->
+                        <!--TODO left button-->
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-9684"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Thanks for visiting</p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="" target="_blank">
+        <span></span>
+      </a>
+      <p class="u-text">
+        <span></span>
+      </p>
+      <a class="u-link" href="" target="_blank">
+        <span></span>
+      </a>
+    </section>
+  </body>
+</html>

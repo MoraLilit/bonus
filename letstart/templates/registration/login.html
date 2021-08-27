@@ -1,0 +1,12 @@
+{% load socialaccount %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h1 style="text-align: center;">Welcome somewhere</h1>
+<h3 style="text-align: center;">Sign in to your Google Account, please</h3>
+<h4 style="text-align: center;"><a href="{% provider_login_url 'google' %}">Sign in</a></h4>
+</body>
+</html>
