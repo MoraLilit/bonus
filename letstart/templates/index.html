@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+
 <html style="font-size: 16px;">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
-		"logo": "templates/images/default-logo.png"
+		"logo": "{% static 'default-logo.png' %}"
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Home">
