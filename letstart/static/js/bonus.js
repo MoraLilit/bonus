@@ -50,7 +50,7 @@ function forReceivingBonus() {
                     alert(jsondata);
                 },
                 error : function() {
-                    alert('Error here in json:' + error);
+                    alert('Error here in json:');
                 }
             });
         }
@@ -78,7 +78,7 @@ function forReceivingBonus() {
                     alert(jsondata);
                 },
                 error : function() {
-                    alert('Error here in json:' + error);
+                    alert('Error here in json:');
                 }
             });
         }
@@ -184,7 +184,7 @@ function addEntryToDb(){
             alert(jsondata);
         },
         error : function() {
-            alert('Error here in json:' + error);
+            alert('Error here in json:');
         }
     });
     window.location.reload(true);
@@ -218,7 +218,7 @@ function bonusFromAdmin(){
             alert(jsondata);
         },
         error : function() {
-            alert('Error here in json:' + error);
+            alert('Error here in json:');
         }
     });
     window.location.reload(true);
