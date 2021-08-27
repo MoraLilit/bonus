@@ -14,6 +14,7 @@ from pathlib import Path
 import psycopg2
 import dj_database_url
 from django.conf.global_settings import DATABASES
+import subprocess
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -111,9 +112,18 @@ SETTINGS_APPLICATION = 'settings.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASE_URL = os.environ['postgres://kaxajybwrfedpq:334bc277eb784ecb707b2f6895c678371ae485e7e5719945f3cc1150ee054f21@ec2-79-125-30-28.eu-west-1.compute.amazonaws.com:5432/d940nub77vcl40']
+# Use your app_name
+bashCommand = 'heroku config:get DATABASE_URL -a bonus-es'
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# executing the bash command and converting byte to string
+output = subprocess.check_output(['bash','-c', bashCommand]).decode('utf-8')
+
+# making connection to heroku DB without having to set DATABASE_URL env variable
+DATABASES['default'] = dj_database_url.config(default=output,conn_max_age=600, ssl_require=True)
+
+'''DATABASE_URL = os.environ['postgresql-trapezoidal-91893']
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)'''
 
 '''DATABASES = {
     'default': {
