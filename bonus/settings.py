@@ -103,11 +103,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'wsgi.application'
-
+WSGI_APPLICATION = 'bonus.wsgi.application'
 
 SETTINGS_APPLICATION = 'settings.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
