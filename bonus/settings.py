@@ -11,9 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-import psycopg2
-import dj_database_url
-# import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -108,19 +106,13 @@ SETTINGS_APPLICATION = 'settings.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-'''DATABASE_URL = os.environ['//kaxajybwrfedpq:334bc277eb784ecb707b2f6895c678371ae485e7e5719945f3cc1150ee054f21@ec2-79-125-30-28.eu-west-1.compute.amazonaws.com:5432/d940nub77vcl40']
-
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)'''
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bonuses',
-        'USER': 'postgres',
-        'PASSWORD': '1532',
-        'HOST': '.herokuapp.com',
+        'NAME': 'd940nub77vcl40',
+        'USER': 'kaxajybwrfedpq',
+        'PASSWORD': '334bc277eb784ecb707b2f6895c678371ae485e7e5719945f3cc1150ee054f21',
+        'HOST': 'ec2-79-125-30-28.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
