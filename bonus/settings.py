@@ -116,7 +116,7 @@ SETTINGS_APPLICATION = 'settings.application'
 bashCommand = 'heroku config:get DATABASE_URL -a bonus-es'
 
 # executing the bash command and converting byte to string
-output = subprocess.check_output(['bash','-c', bashCommand]).decode('utf-8')
+output = subprocess.check_output(['bash' + ' -c ' + bashCommand]).decode('utf-8')
 
 # making connection to heroku DB without having to set DATABASE_URL env variable
 DATABASES['default'] = dj_database_url.config(default=output,conn_max_age=600, ssl_require=True)
