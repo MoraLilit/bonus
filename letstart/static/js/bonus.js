@@ -47,10 +47,10 @@ function forReceivingBonus() {
                 dataType: 'json',
                 // handle a successful response
                 success : function(jsondata) {
-                    alert(jsondata);
+                    console.log(jsondata);
                 },
                 error : function(jsondata) {
-                    alert('Error here in json:' + jsondata);
+                    console.log('Error here in json:' + jsondata);
                 }
             });
         }
@@ -75,10 +75,10 @@ function forReceivingBonus() {
                 dataType: 'json',
                 // handle a successful response
                 success : function(jsondata) {
-                    alert(jsondata);
+                    console.log(jsondata);
                 },
                 error : function(jsondata) {
-                    alert('Error here in json:' + jsondata);
+                    console.log('Error here in json:' + jsondata);
                 }
             });
         }
@@ -181,10 +181,10 @@ function addEntryToDb(){
         dataType: 'json',
         // handle a successful response
         success : function(jsondata) {
-            alert(jsondata);
+            console.log(jsondata);
         },
         error : function(jsondata) {
-            alert('Error here in json:' + jsondata);
+            console.log('Error here in json:' + jsondata);
         }
     });
     window.location.reload(true);
@@ -215,10 +215,10 @@ function bonusFromAdmin(){
         dataType: 'json',
         // handle a successful response
         success : function(jsondata) {
-            alert(jsondata);
+            console.log(jsondata);
         },
         error : function(jsondata) {
-            alert('Error here in json:' + jsondata);
+            console.log('Error here in json:' + jsondata);
         }
     });
     window.location.reload(true);
