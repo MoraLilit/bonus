@@ -10,9 +10,9 @@
     <title>Home</title>
     <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
     <link rel="stylesheet" href="{% static 'css/Home.css' %}" media="screen">
-    <script class="u-script" type="text/javascript" src="../static/js/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="../static/js/nicepage.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="../static/js/bonus.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% sttaic 'js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/bonus.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 3.22.0, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     
@@ -30,7 +30,7 @@
   <body data-home-page="Home.html" data-home-page-title="Home" class="u-body" onload="onLoad('{{ chosen_user.Access }}', '{{ general_bonuses.bonus_admin }}', '{{ chosen_user.receiving_bonuses }}')"><header class="u-clearfix u-header u-header" id="sec-2be6"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <a href="" class="u-image u-logo u-image-1">
           <!--TODO href for logo-->
-          <img src="../static/default-logo.png" class="u-logo-image u-logo-image-1">
+          <img src="{% static 'default-logo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
@@ -67,7 +67,7 @@
                   <div class="u-container-style u-layout-cell u-size-13 u-layout-cell-1">
                     <div class="u-container-layout u-container-layout-1">
                       <!--TODO container with info-->
-                      <img class="u-image u-image-default user_image u-image-1" src="../static/def-profile-pic.jpg" alt="" data-image-width="400" data-image-height="265">
+                      <img class="u-image u-image-default user_image u-image-1" src="{% static 'def-profile-pic.jpg' %}" alt="" data-image-width="400" data-image-height="265">
                       <p id="current-username">{{chosen_user.first_name}} {{chosen_user.last_name}}</p>
                       <p id="yours-bonuses">Here your bonus: <b>{{ current_user_bonus }}</b></p>
                       <p id="bonuses-to-give">Here not yours: <b>{{general_bonuses.bonus_admin}}</b></p>
